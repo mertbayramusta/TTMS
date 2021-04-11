@@ -1,0 +1,57 @@
+﻿@page
+@model CENG396WWTTMS.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_LayoutTT.cshtml";
+}
+<style>
+    h1, h6, label, input {
+        font-family: Georgia;
+    }
+</style>
+<br />
+<br />
+<h1>Water Works Company Trouble Ticket Management System</h1>
+
+<h6>Create a Trouble Ticket by filling the form below:</h6>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div>
+                <label asp-for="Trouble.AbonNum" class="control-label">Abonnement Number:</label>
+                <input asp-for="Trouble.AbonNum" class=" form-control" />
+                <span asp-validation-for="Trouble.AbonNum" class=" text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trouble.FullName" class="control-label">Full Name:</label>
+                <input asp-for="Trouble.FullName" class="form-control" />
+                <span asp-validation-for="Trouble.FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trouble.Email" class="control-label">E-mail:</label>
+                <input asp-for="Trouble.Email" class="form-control" />
+                <span asp-validation-for="Trouble.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trouble.TroubleDesc" class="control-label">Trouble Description:</label>
+                <input asp-for="Trouble.TroubleDesc" class="form-control" />
+                <span asp-validation-for="Trouble.TroubleDesc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <br />
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to main page</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

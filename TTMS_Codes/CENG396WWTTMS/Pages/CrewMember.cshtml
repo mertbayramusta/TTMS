@@ -1,0 +1,117 @@
+﻿@page
+@model CENG396WWTTMS.CrewMemberModel
+@{
+    ViewData["Title"] = "CrewMember";
+    Layout = "~/Pages/Shared/_LayoutCrewMember.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head style="background-color: #9acbff">
+    <meta name="viewport" content="width=device-width" />
+    <title>WELCOME</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    @Model.Msg
+    <!--<button type="submit" asp-page="Index" asp-page-handler="Logout" style="float:right; background-color:lightgrey" class="btn" value="Logout">Logout</button>-->
+    <form id="form1" method="post">
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+                background-color: #8ec8ff;
+            }
+
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+        </style>
+
+        <h4>Assigned Trouble's Box</h4>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Trouble[0].TtNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Trouble[0].AbonNum)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Trouble[0].FullName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Trouble[0].Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Trouble[0].TroubleDesc)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Trouble[0].TicketState)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Trouble)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TtNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AbonNum)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FullName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TroubleDesc)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TicketState)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div>
+            <label class="control-label">Enter the ticket number of the trouble you want to see the address of it:</label>
+            <input class="control-label " id="ttnumber" name="ttnumber" />
+            <div class="form-group">
+                <center><button class="sendButton" onclick="Message2()" asp-page-handler="Save">Send the address via E-mail</button></center>
+            </div>
+            <label class="control-label">Enter the ticket number of the trouble you want to close:</label>
+            <input class="control-label " id="tnumber" name="tnumber" />
+            <div class="form-group">
+                <center><button class="sendButton" onclick="Message()" asp-page-handler="Register">Close the ticket</button></center>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
+<script>
+    function Message() {
+        alert("Ticket is closed!");
+    }
+    function Message2() {
+        alert("The address is sent via E-mail!");
+    }
+</script>

@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - mainPage_396</title>
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />*@
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:lightsteelblue">
+    <br />
+    <div class="row">
+        <div class="col-md-5">
+            <div style="padding-left:3px">
+                <img style="height: 120px; width: 130px; float:left; background-color:midnightblue" src="2nd-chance-water-icon.png" alt="water icon">
+            </div>
+            <br />
+            <h5 style="text-align:center"><b>Water Works Company</b></h5>
+            <h5 style="text-align:center"><b>Trouble Ticketing Management System</b></h5>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-3" style="background-color:darkgray; padding-right: 25px; padding-bottom: 5px; padding-top: 5px">
+            <form method="post" asp-page="login">
+                Email: <input type="text" name="email" placeholder="Email" style="float:right" />
+                <br /> <br />
+                Password: <input type="password" name="password" placeholder="Password" style="float:right" />
+                <br /> <br /><button type="submit" style="float:right; background-color:lightgrey" class="btn" value="Login">Login</button>
+            </form>
+        </div>
+    </div>
+    <br /><br /><br />
+
+    <div class="row" style="height: 30px">
+
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <h3 style="text-align:center;">Welcome to Trouble Ticketing Management System.</h3><br />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <h6 style="text-align:center;">
+                You can report your trouble by clicking the "Fill a trouble ticket" button down below.<br />
+                If you have any further questions and want to contact us,<br />
+                there's our company address and phone number at the bottom of the page. <br />
+            </h6> <br />
+            <div class="text-center">
+                <form method="post" asp-page="">
+                    <br />
+                    <!--<button type="button" class="btn" asp-page="Create" style="background-color:darkorange">Fill a Trouble Ticket</button> -->
+                    <a asp-page="Create">Fill a Trouble Ticket</a>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <br /><br />
+    <div class="row" style="height:75px;">
+        <div class="col"></div>
+    </div>
+
+    <div class="row" style="padding-left:5px">
+        <div class="col-md-2">
+            <i style='font-size:24px; float:left' class='fas'>&#xf015;</i>
+            <p style="text-align:center">************</p>
+        </div>
+        <div class="col-md-2">
+            <i style='font-size:24px; float:left' class='fas'>&#xf879;</i>
+            <p style="text-align:center">************</p>
+        </div>
+        <div class="col"></div>
+    </div>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+
+</body>
+</html>
+
+@*<header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">mainPage_396</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>*@
+
+@*<footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - mainPage_396 - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>*@
+
+@*<script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)*@

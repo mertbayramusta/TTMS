@@ -1,0 +1,61 @@
+﻿@page
+@model CENG396WWTTMS.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Trouble</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Trouble.TtNumber" />
+            <div class="form-group">
+                <label asp-for="Trouble.AbonNum" class="control-label"></label>
+                <select asp-for="Trouble.AbonNum" class="form-control" asp-items="ViewBag.AbonNum"></select>
+                <span asp-validation-for="Trouble.AbonNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trouble.FullName" class="control-label"></label>
+                <input asp-for="Trouble.FullName" class="form-control" />
+                <span asp-validation-for="Trouble.FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trouble.Email" class="control-label"></label>
+                <input asp-for="Trouble.Email" class="form-control" />
+                <span asp-validation-for="Trouble.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trouble.TroubleDesc" class="control-label"></label>
+                <input asp-for="Trouble.TroubleDesc" class="form-control" />
+                <span asp-validation-for="Trouble.TroubleDesc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trouble.CrewAssignedId" class="control-label"></label>
+                <select asp-for="Trouble.CrewAssignedId" class="form-control" asp-items="ViewBag.CrewAssignedId"></select>
+                <span asp-validation-for="Trouble.CrewAssignedId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trouble.TicketState" class="control-label"></label>
+                <input asp-for="Trouble.TicketState" class="form-control" />
+                <span asp-validation-for="Trouble.TicketState" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
